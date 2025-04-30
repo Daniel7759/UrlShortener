@@ -5,6 +5,7 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 @RestController
 @RequestMapping("/v1/shorten")
@@ -68,5 +69,13 @@ public class UrlController {
         } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
+    }
+
+    @GetMapping("/redirect/{shortCode}")
+    public RedirectView redirectToOriginalUrl(@PathVariable(value = "shortCode") String shortCode){
+        Url urlDB = urlService.getShortUrl(shortCode);
+        RedirectView redirectView = new RedirectView();
+        redirectView.setUrl(urlDB.getUrl());
+        return redirectView;
     }
 }
