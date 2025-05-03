@@ -1,6 +1,7 @@
 # Proyecto de Acortador de URLs
 
-Este es un proyecto de ejemplo desarrollado en **Java** utilizando **Spring Boot** y **Maven**. El objetivo del proyecto es crear un servicio para acortar URLs, con funcionalidades para crear, consultar, actualizar, eliminar y redirigir URLs acortadas.
+Este es un proyecto practico desarrollado en **Java** utilizando **Spring Boot** y **Maven**. El objetivo del proyecto es crear un servicio para acortar URLs, con funcionalidades para crear, consultar, actualizar, eliminar y redirigir URLs acortadas.
+Basado en: https://roadmap.sh/projects/url-shortening-service
 
 ## Características
 
