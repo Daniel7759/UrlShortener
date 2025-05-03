@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: UrlShortener
+
+  data:
+    mongodb:
+      uri: ${MONGODB_URI}
+
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          mongodb:
+            core:
+              MongoTemplate: DEBUG
