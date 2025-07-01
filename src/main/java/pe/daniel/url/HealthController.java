@@ -21,6 +21,11 @@ public class HealthController {
         return new ResponseEntity<>("Servicio en linea", HttpStatus.OK);
     }
 
+    @GetMapping("/env/test")
+    public String printEnv() {
+        return System.getenv("DATABASE_URL");
+    }
+
     @GetMapping("/{shortCode}")
     public RedirectView redirectToOriginalUrl(@PathVariable(value = "shortCode") String shortCode){
         Url urlDB = urlService.getShortUrl(shortCode);
